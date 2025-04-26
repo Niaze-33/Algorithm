@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+    //This helps us to find divisors of all the number in a range
+
+const int N=1e5+10;
+
+vector<int>divisors[N];
+int main()
+{
+    for(int i=2;i<N;++i){
+        for(int j=i;j<N;j+=i){
+            divisors[j].push_back(i);
+        }
+    }
+
+
+    int n;
+    cin>>n;
+    for(int i=1;i<n;i++){
+        for(auto u:divisors[i]){
+            cout<<u<<" ";
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
